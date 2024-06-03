@@ -1,4 +1,4 @@
-class AddMissingIndexes < ActiveRecord::Migration[5.1]
+class AddMissingIndexes < ActiveRecord::Migration[5.1][5.1]
   def change
     add_index :users, :username, unique: true
     add_index :organizations, :slug, unique: true

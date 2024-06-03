@@ -89,7 +89,7 @@ gem "sdoc", "~> 1.0", group: :doc
 gem "serviceworker-rails", "~> 0.5"
 gem "share_meow_client", "~> 0.1"
 gem "sitemap_generator", "~> 6.0"
-gem "skylight", "~> 3.1"
+gem "skylight"
 gem "slack-notifier", "~> 2.3"
 gem "sprockets", "~> 3.7"
 gem "staccato", "~> 0.5"
@@ -107,21 +107,23 @@ group :development do
   gem "better_errors", "~> 2.5"
   gem "binding_of_caller", "~> 0.8"
   gem "brakeman", "~> 4.4", require: false
-  gem "bullet", "~> 5.9"
+  gem "bullet"
   gem "bundler-audit", "~> 0.6"
   gem "derailed_benchmarks", "~> 1.3"
   gem "guard", "~> 2.15", require: false
   gem "guard-livereload", "~> 2.5", require: false
   gem "guard-rspec", "~> 4.7", require: false
+  gem "rack-mini-profiler"
   gem "rb-fsevent", "~> 0.10", require: false
   gem "web-console", "~> 3.7"
 end
+
+gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 
 group :development, :test do
   gem "capybara", "~> 3.13"
   gem "derailed", "~> 0.1"
   gem "erb_lint", "~> 0.0", require: false
-  gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
   gem "fix-db-schema-conflicts"
   gem "memory_profiler", "~> 0.9"
   gem "parallel_tests", "~> 2.27"

@@ -1,4 +1,4 @@
-class DropFlipflopFeatures < ActiveRecord::Migration[5.1]
+class DropFlipflopFeatures < ActiveRecord::Migration[5.1][5.1]
   def up
     drop_table :flipflop_features
   end

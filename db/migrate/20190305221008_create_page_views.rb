@@ -1,4 +1,4 @@
-class CreatePageViews < ActiveRecord::Migration[5.1]
+class CreatePageViews < ActiveRecord::Migration[5.1][5.1]
   def change
     create_table :page_views do |t|
       t.bigint    :user_id

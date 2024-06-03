@@ -1,0 +1,43 @@
+development:
+  cache_classes: false
+  eager_load: false
+  consider_all_requests_local: true
+  perform_caching: false
+  action_mailer.delivery_method: smtp
+  assets.debug: false
+  assets.digest: false
+  assets.raise_runtime_errors: true
+  webpacker.check_yarn_integrity: true
+
+test:
+  cache_classes: true
+  eager_load: false
+  consider_all_requests_local: true
+  perform_caching: false
+  action_mailer.delivery_method: test
+  assets.debug: null
+  assets.digest: null
+  assets.raise_runtime_errors: null
+  webpacker.check_yarn_integrity: null
+
+production:
+  cache_classes: true
+  eager_load: true
+  consider_all_requests_local: false
+  perform_caching: true
+  action_mailer.delivery_method: smtp
+  assets.debug: null
+  assets.digest: true
+  assets.raise_runtime_errors: null
+  webpacker.check_yarn_integrity: false
+
+local_production:
+  cache_classes: true
+  eager_load: true
+  consider_all_requests_local: false
+  perform_caching: true
+  action_mailer.delivery_method: smtp
+  assets.debug: null
+  assets.digest: true
+  assets.raise_runtime_errors: null
+  webpacker.check_yarn_integrity: false
