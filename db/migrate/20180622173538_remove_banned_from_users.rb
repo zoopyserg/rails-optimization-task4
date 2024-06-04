@@ -1,4 +1,4 @@
-class RemoveBannedFromUsers < ActiveRecord::Migration[5.1]
+class RemoveBannedFromUsers < ActiveRecord::Migration[5.1][5.1]
   def change
     remove_column :users, :banned
   end

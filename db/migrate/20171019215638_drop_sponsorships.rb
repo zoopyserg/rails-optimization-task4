@@ -1,4 +1,4 @@
-class DropSponsorships < ActiveRecord::Migration[5.1]
+class DropSponsorships < ActiveRecord::Migration[5.1][5.1]
   def change
     drop_table :sponsorships
   end

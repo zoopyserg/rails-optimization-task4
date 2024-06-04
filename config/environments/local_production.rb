@@ -1,4 +1,5 @@
 # rubocop:disable Metrics/BlockLength
+
 require "yaml"
 env_settings = YAML.load(ERB.new(File.read(Rails.root.join("config", "environments.yml"))).result)[Rails.env]
 
@@ -94,7 +95,7 @@ Rails.application.configure do
   end
 
   # Timber.io logger
-  send_logs_to_timber = ENV["SEND_LOGS_TO_TIMBER"] || "true" # <---- production should send timber logs by default
+  send_logs_to_timber = ENV["SEND_LOGS_TO_TIMBER"] || "false" # <---- set to false to stop sending dev logs to Timber.io
   log_device = send_logs_to_timber == "true" ? Timber::LogDevices::HTTP.new(ENV["TIMBER"]) : STDOUT
   logger = Timber::Logger.new(log_device)
   logger.level = config.log_level
@@ -115,7 +116,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: ENV["APP_PROTOCOL"] + ENV["APP_DOMAIN"] }
+  config.action_mailer.default_url_options = { host: "localhost:3000" }
   ActionMailer::Base.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: "587",

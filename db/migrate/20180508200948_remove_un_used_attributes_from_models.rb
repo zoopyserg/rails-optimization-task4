@@ -1,4 +1,4 @@
-class RemoveUnUsedAttributesFromModels < ActiveRecord::Migration[5.1]
+class RemoveUnUsedAttributesFromModels < ActiveRecord::Migration[5.1][5.1]
   def change
     remove_column :articles, :boosted
     remove_column :articles, :github_path

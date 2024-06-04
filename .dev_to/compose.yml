@@ -33,6 +33,7 @@ x-backend: &backend
     ALGOLIASEARCH_APPLICATION_ID: ${ALGOLIASEARCH_APPLICATION_ID}
     ALGOLIASEARCH_API_KEY: ${ALGOLIASEARCH_API_KEY}
     ALGOLIASEARCH_SEARCH_ONLY_KEY: ${ALGOLIASEARCH_SEARCH_ONLY_KEY}
+    SKYLIGHT_AUTHENTICATION: ${SKYLIGHT_AUTHENTICATION}
     REDIS_URL: redis://redis:6379/
     DATABASE_URL: postgres://postgres:postgres@postgres:5432
     WEBPACKER_DEV_SERVER_HOST: webpacker
@@ -59,13 +60,14 @@ services:
   web:
     <<: *backend
     command: bundle exec rails server -b 0.0.0.0
+    environment:
+      <<: *backend_environment
+      RAILS_ENV: development  # Set the Rails environment to local_production
     ports:
       - '3000:3000'
     depends_on:
       webpacker:
         condition: service_started
-      # sidekiq:
-      #   condition: service_started
 
   # sidekiq:
   #   <<: *backend
